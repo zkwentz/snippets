@@ -34,6 +34,16 @@ So in your application template you can do the following:
 render 'layouts/partials/header' currentController
 ```
 
+*layouts/partials/-header.emblem*
+```haml
+nav
+  a.brand-logo navigationTitle
+  ul
+    li
+      ...
+```
+
+
 *Note: [.emblem](https://github.com/machty/emblem.js/) syntax*
 
 And in controllers that you want to change the header scope:
@@ -50,3 +60,5 @@ MyController = Ember.Controller.extend(
 
 )
 ```
+
+Originally, I had just set the properties themselves on the application controller, and left it as a partial, however this became really valuable when getting more complicated like adding links and things that sent actions, which the application controller wouldn't and shouldn't respond to.
